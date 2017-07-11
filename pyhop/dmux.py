@@ -129,11 +129,12 @@ def main():
            try:
                sample, barcode = s.split(':')
            except ValueError:
-               print('Wrong samples mapping. Must be in ``sample``:``barcode``
-                    format.')
+               print("Wrong samples mapping. Must be in ``sample``:``barcode`` format.")
            samples.update({sample:barcode})
+           
     stat_dict = dmux_and_trim(kwargs['fastq'], samples, result_dir,
         progress=kwargs['progress'], transposon=kwargs['transposon'])
+
     for sample,reads in stat_dict.items():
         print('Sample:\t{}\t-\t{} reads.'.format(sample, reads))
     print('Done.')
