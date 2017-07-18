@@ -29,6 +29,7 @@ def hamming(s1, s2):
     return sum(ch1 != ch2 for ch1,ch2 in zip(s1, s2))
 
 
+# FIXME: The following doesn't fail with a malformed fastq file
 def dmux_and_trim(fastq, samples, result_dir=None, transposon='ACAGGTTGGATGATAAG', progress=1000000):
     # This will hold output files in the form
     # `barcode`: `file handle`
