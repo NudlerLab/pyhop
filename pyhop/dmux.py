@@ -5,6 +5,7 @@ import gzip
 import json
 import argparse
 
+from .parse import parse_fastq
 
 def read_config(filename):
     '''
